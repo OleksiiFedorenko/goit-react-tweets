@@ -1,13 +1,17 @@
 {
   "files": {
     "main.css": "/react-social-test-task/static/css/main.7acaea2f.css",
-    "main.js": "/react-social-test-task/static/js/main.3e4be9fd.js",
+    "main.js": "/react-social-test-task/static/js/main.5c1bace6.js",
+    "static/js/544.92cd5947.chunk.js": "/react-social-test-task/static/js/544.92cd5947.chunk.js",
+    "static/js/997.85b7be19.chunk.js": "/react-social-test-task/static/js/997.85b7be19.chunk.js",
     "index.html": "/react-social-test-task/index.html",
     "main.7acaea2f.css.map": "/react-social-test-task/static/css/main.7acaea2f.css.map",
-    "main.3e4be9fd.js.map": "/react-social-test-task/static/js/main.3e4be9fd.js.map"
+    "main.5c1bace6.js.map": "/react-social-test-task/static/js/main.5c1bace6.js.map",
+    "544.92cd5947.chunk.js.map": "/react-social-test-task/static/js/544.92cd5947.chunk.js.map",
+    "997.85b7be19.chunk.js.map": "/react-social-test-task/static/js/997.85b7be19.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.3e4be9fd.js"
+    "static/js/main.5c1bace6.js"
   ]
 }
