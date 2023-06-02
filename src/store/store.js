@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import {
-  //   persistStore,
-  //   persistReducer,
+  persistStore,
+  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -9,10 +9,26 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-// import storage from 'redux-persist/lib/storage';
+import storage from 'redux-persist/lib/storage';
+import { tweetsReducer } from './tweets/tweetsSlice';
+import { filterReducer } from './filter/filterSlice';
+
+const tweetsPersistConfig = {
+  key: 'followings',
+  storage,
+  whitelist: ['followings'],
+};
+
+const persistedTweetsReducer = persistReducer(
+  tweetsPersistConfig,
+  tweetsReducer
+);
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    tweets: persistedTweetsReducer,
+    filter: filterReducer,
+  },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
@@ -20,3 +36,5 @@ export const store = configureStore({
       },
     }),
 });
+
+export const persistor = persistStore(store);

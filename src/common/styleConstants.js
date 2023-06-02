@@ -1,16 +1,20 @@
+export const colorBrandDark = '#471Ca9';
+export const colorBrandLight = '#ebd8ff';
+export const colorBrandMid = '#a384c4';
+
 export const linkStyles = {
   textTransform: 'uppercase',
   textDecoration: 'none',
   fontSize: '20px',
-  color: 'gray.300',
+  color: colorBrandMid,
 
   ':hover': {
-    color: 'white',
+    color: colorBrandLight,
     textDecoration: 'none',
   },
 
   '&.active': {
-    color: 'white',
+    color: colorBrandLight,
     textDecoration: 'overline',
   },
 };

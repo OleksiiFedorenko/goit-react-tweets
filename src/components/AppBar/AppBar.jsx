@@ -1,11 +1,11 @@
 import { NavLink as MenuLink } from 'react-router-dom';
-import { Flex, Link } from '@chakra-ui/react';
+import { Center, Flex, Link } from '@chakra-ui/react';
 import { linkStyles } from 'common/styleConstants';
 
 const AppBar = () => {
   return (
-    <nav>
-      <Flex gap="16px">
+    <Center as="nav" h="50px" px="20px" bg="#471CA9">
+      <Flex align="center" gap="24px" maxW="820px" flex="1">
         <Link as={MenuLink} to="/" sx={linkStyles}>
           Home
         </Link>
@@ -14,7 +14,7 @@ const AppBar = () => {
           Tweets
         </Link>
       </Flex>
-    </nav>
+    </Center>
   );
 };
 
