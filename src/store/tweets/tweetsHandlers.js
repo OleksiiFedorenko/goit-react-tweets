@@ -3,12 +3,13 @@ const thunks = [fetchFirstUsers, fetchMoreUsers];
 export const thunksStatuses = status => thunks.map(thunk => thunk[status]);
 
 export const handleFirstFetch = (state, { payload }) => {
-  console.log(payload);
-  state.tweets = payload;
+  state.users = payload;
+  state.page = 2;
 };
 
 export const handleFetchMore = (state, { payload }) => {
-  state.tweets.push(...payload);
+  state.users.push(...payload);
+  state.page += 1;
 };
 
 export const handlePending = state => {
@@ -16,7 +17,6 @@ export const handlePending = state => {
 };
 
 export const handleSuccess = state => {
-  state.page += 1;
   state.isLoading = false;
   state.error = false;
 };

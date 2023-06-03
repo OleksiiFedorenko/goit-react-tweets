@@ -17,8 +17,7 @@ export const fetchFirstUsers = createAsyncThunk(
 
 export const fetchMoreUsers = createAsyncThunk(
   'users/fetchMore',
-  async (_, thunkAPI) => {
-    const page = 2;
+  async (page, thunkAPI) => {
     try {
       const response = await axios.get(`/tweets?p=${page}&l=3`);
       return response.data;
