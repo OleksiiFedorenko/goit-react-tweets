@@ -1,8 +1,7 @@
 export const colorBrandDark = '#471Ca9';
-export const colorDarkHover = '#5736a3';
 export const colorBrandLight = '#ebd8ff';
-export const colorLightHover = '#ccb6e3';
 export const colorGreen = '#5cd3a8';
+export const colorDarkHover = '#5736a3';
 
 export const linkStyles = {
   textTransform: 'uppercase',
@@ -19,6 +18,19 @@ export const linkStyles = {
     color: 'white',
     textDecoration: 'overline',
   },
+};
+
+export const filterStyles = {
+  fontSize: '18px',
+  textTransform: 'uppercase',
+  bg: colorBrandDark,
+  borderColor: colorBrandDark,
+  color: colorBrandLight,
+};
+
+export const filterOptionStyles = {
+  color: colorBrandLight,
+  background: colorBrandDark,
 };
 
 export const cardStyles = {
@@ -42,7 +54,7 @@ export const btnStyles = {
   borderRadius: '10px',
   bg: colorBrandLight,
   '&:hover': {
-    bg: colorLightHover,
+    bg: colorGreen,
   },
   '&.load-more': {
     color: colorBrandLight,
@@ -55,7 +67,20 @@ export const btnStyles = {
     bg: colorGreen,
   },
   '&.following:hover': {
-    bg: 'green.500',
+    bg: colorBrandLight,
+  },
+};
+
+export const smBtnStyles = {
+  w: '126px',
+  h: '40px',
+  textTransform: 'uppercase',
+  fontSize: '18px',
+  borderRadius: '10px',
+  bg: colorBrandLight,
+  '&:hover': {
+    color: colorBrandLight,
+    bg: colorBrandDark,
   },
 };
 

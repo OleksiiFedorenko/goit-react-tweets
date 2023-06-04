@@ -1,52 +1,30 @@
-import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchFirstUsers, fetchMoreUsers } from 'store/tweets/tweetsOperations';
-import { selectPage, selectIsLoading } from 'store/tweets/tweetsSelectors';
-import { Box, Button, useToast } from '@chakra-ui/react';
-import { btnStyles, colorBrandLight } from 'common/styles';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchFirstUsers } from 'store/tweets/tweetsOperations';
+import { Box, Flex } from '@chakra-ui/react';
+import { colorBrandLight } from 'common/styles';
 
 import UserList from 'components/UserList/UserList';
+import BackBtn from 'components/BackBtn/BackBtn';
+import LoadMore from 'components/LoadMore/LoadMore';
+import Filter from 'components/Filter/Filter';
 
 const Tweets = () => {
   const dispatch = useDispatch();
-  const page = useSelector(selectPage);
-  const isLoading = useSelector(selectIsLoading);
-  const toast = useToast();
-  const [limitReached, setLimitReached] = useState(false);
 
   useEffect(() => {
     dispatch(fetchFirstUsers());
   }, [dispatch]);
 
-  const handleClick = async () => {
-    const res = await dispatch(fetchMoreUsers(page)).unwrap();
-    if (res.length < 3) {
-      toast({
-        title: "You've reached the limit.",
-        status: 'warning',
-        variant: 'subtle',
-        position: 'top',
-        isClosable: true,
-      });
-      setLimitReached(true);
-    }
-  };
-
   return (
     <Box bg={colorBrandLight} minH="94.6vh">
       <Box maxW="1256px" mx="auto" py="24px" px="34px" textAlign="center">
+        <Flex justify="space-between" gap="24px" mb="24px">
+          <BackBtn />
+          <Filter />
+        </Flex>
         <UserList />
-        {!limitReached && (
-          <Button
-            onClick={handleClick}
-            isLoading={isLoading}
-            mt="24px"
-            className="load-more"
-            sx={btnStyles}
-          >
-            Load More
-          </Button>
-        )}
+        <LoadMore />
       </Box>
     </Box>
   );

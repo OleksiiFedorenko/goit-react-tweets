@@ -1,13 +1,24 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { initTweets } from '../initial';
-import { fetchFirstUsers, fetchMoreUsers } from './tweetsOperations';
+import {
+  fetchFirstUsers,
+  fetchMoreUsers,
+  increaseFollowers,
+  decreaseFollowers,
+} from './tweetsOperations';
 import {
   handleFirstFetch,
   handleFetchMore,
-  handlePending,
-  handleSuccess,
-  handleError,
-  thunksStatuses,
+  fetchThunksStatuses,
+  handleFetchPending,
+  handleFetchSuccess,
+  handleFetchError,
+  handleFollow,
+  handleUnfollow,
+  updateThunksStatuses,
+  handleUpdatePending,
+  handleUpdateSuccess,
+  handleUpdateError,
 } from './tweetsHandlers';
 
 const tweetsSlice = createSlice({
@@ -17,9 +28,29 @@ const tweetsSlice = createSlice({
     builder
       .addCase(fetchFirstUsers.fulfilled, handleFirstFetch)
       .addCase(fetchMoreUsers.fulfilled, handleFetchMore)
-      .addMatcher(isAnyOf(...thunksStatuses('pending')), handlePending)
-      .addMatcher(isAnyOf(...thunksStatuses('fulfilled')), handleSuccess)
-      .addMatcher(isAnyOf(...thunksStatuses('rejected')), handleError);
+      .addCase(increaseFollowers.fulfilled, handleFollow)
+      .addCase(decreaseFollowers.fulfilled, handleUnfollow)
+      .addMatcher(
+        isAnyOf(...fetchThunksStatuses('pending')),
+        handleFetchPending
+      )
+      .addMatcher(
+        isAnyOf(...fetchThunksStatuses('fulfilled')),
+        handleFetchSuccess
+      )
+      .addMatcher(isAnyOf(...fetchThunksStatuses('rejected')), handleFetchError)
+      .addMatcher(
+        isAnyOf(...updateThunksStatuses('pending')),
+        handleUpdatePending
+      )
+      .addMatcher(
+        isAnyOf(...updateThunksStatuses('fulfilled')),
+        handleUpdateSuccess
+      )
+      .addMatcher(
+        isAnyOf(...updateThunksStatuses('rejected')),
+        handleUpdateError
+      );
   },
 });
 
