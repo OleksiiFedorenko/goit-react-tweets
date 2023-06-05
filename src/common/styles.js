@@ -9,7 +9,7 @@ export const linkStyles = {
   fontSize: '20px',
   color: colorBrandLight,
 
-  ':hover': {
+  ':hover, :focus': {
     color: 'white',
     textDecoration: 'none',
   },
@@ -53,20 +53,20 @@ export const btnStyles = {
   fontSize: '18px',
   borderRadius: '10px',
   bg: colorBrandLight,
-  '&:hover': {
+  '&:hover, :focus': {
     bg: colorGreen,
   },
   '&.load-more': {
     color: colorBrandLight,
     bg: colorBrandDark,
   },
-  '&.load-more:hover': {
+  '&.load-more:hover, &.load-more:focus': {
     bg: colorDarkHover,
   },
   '&.following': {
     bg: colorGreen,
   },
-  '&.following:hover': {
+  '&.following:hover, &.following:focus': {
     bg: colorBrandLight,
   },
 };
@@ -78,7 +78,7 @@ export const smBtnStyles = {
   fontSize: '18px',
   borderRadius: '10px',
   bg: colorBrandLight,
-  '&:hover': {
+  '&:hover, :focus': {
     color: colorBrandLight,
     bg: colorBrandDark,
   },
@@ -104,12 +104,14 @@ export const lineStyles = {
 };
 
 export const circleStyles = {
+  zIndex: '10',
   position: 'absolute',
   left: '150px',
   top: '178px',
 };
 
 export const avatarStyles = {
+  zIndex: '5',
   position: 'absolute',
   left: '163px',
   top: '186px',
