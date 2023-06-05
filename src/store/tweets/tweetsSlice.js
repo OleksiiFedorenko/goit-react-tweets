@@ -20,6 +20,7 @@ import {
   handleUpdateSuccess,
   handleUpdateError,
 } from './tweetsHandlers';
+import { STATUS } from 'common/constants';
 
 const tweetsSlice = createSlice({
   name: 'tweets',
@@ -31,24 +32,27 @@ const tweetsSlice = createSlice({
       .addCase(increaseFollowers.fulfilled, handleFollow)
       .addCase(decreaseFollowers.fulfilled, handleUnfollow)
       .addMatcher(
-        isAnyOf(...fetchThunksStatuses('pending')),
+        isAnyOf(...fetchThunksStatuses(STATUS.PENDING)),
         handleFetchPending
       )
       .addMatcher(
-        isAnyOf(...fetchThunksStatuses('fulfilled')),
+        isAnyOf(...fetchThunksStatuses(STATUS.FULFILLED)),
         handleFetchSuccess
       )
-      .addMatcher(isAnyOf(...fetchThunksStatuses('rejected')), handleFetchError)
       .addMatcher(
-        isAnyOf(...updateThunksStatuses('pending')),
+        isAnyOf(...fetchThunksStatuses(STATUS.REJECTED)),
+        handleFetchError
+      )
+      .addMatcher(
+        isAnyOf(...updateThunksStatuses(STATUS.PENDING)),
         handleUpdatePending
       )
       .addMatcher(
-        isAnyOf(...updateThunksStatuses('fulfilled')),
+        isAnyOf(...updateThunksStatuses(STATUS.FULFILLED)),
         handleUpdateSuccess
       )
       .addMatcher(
-        isAnyOf(...updateThunksStatuses('rejected')),
+        isAnyOf(...updateThunksStatuses(STATUS.REJECTED)),
         handleUpdateError
       );
   },
