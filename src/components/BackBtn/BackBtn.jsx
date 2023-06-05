@@ -1,13 +1,17 @@
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { setFilter } from 'store/filter/filterSlice';
 import { Button } from '@chakra-ui/react';
-import { smBtnStyles } from 'common/styles';
 import { ArrowBackIcon } from '@chakra-ui/icons';
+import { smBtnStyles } from 'common/styles';
 
 const BackBtn = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate('/');
+    dispatch(setFilter('all'));
   };
 
   return (
