@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/react-social-test-task/static/css/main.7acaea2f.css",
-    "main.js": "/react-social-test-task/static/js/main.9c248239.js",
+    "main.js": "/react-social-test-task/static/js/main.1160ab69.js",
     "static/js/548.f281e837.chunk.js": "/react-social-test-task/static/js/548.f281e837.chunk.js",
-    "static/js/318.128457f8.chunk.js": "/react-social-test-task/static/js/318.128457f8.chunk.js",
+    "static/js/318.e5b64d4f.chunk.js": "/react-social-test-task/static/js/318.e5b64d4f.chunk.js",
     "static/js/898.0a4e61ec.chunk.js": "/react-social-test-task/static/js/898.0a4e61ec.chunk.js",
     "static/media/card-bg.png": "/react-social-test-task/static/media/card-bg.032662a2a907475127d7.png",
     "index.html": "/react-social-test-task/index.html",
     "main.7acaea2f.css.map": "/react-social-test-task/static/css/main.7acaea2f.css.map",
-    "main.9c248239.js.map": "/react-social-test-task/static/js/main.9c248239.js.map",
+    "main.1160ab69.js.map": "/react-social-test-task/static/js/main.1160ab69.js.map",
     "548.f281e837.chunk.js.map": "/react-social-test-task/static/js/548.f281e837.chunk.js.map",
-    "318.128457f8.chunk.js.map": "/react-social-test-task/static/js/318.128457f8.chunk.js.map",
+    "318.e5b64d4f.chunk.js.map": "/react-social-test-task/static/js/318.e5b64d4f.chunk.js.map",
     "898.0a4e61ec.chunk.js.map": "/react-social-test-task/static/js/898.0a4e61ec.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.9c248239.js"
+    "static/js/main.1160ab69.js"
   ]
 }
