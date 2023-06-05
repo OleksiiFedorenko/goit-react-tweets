@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
   increaseFollowers,
   decreaseFollowers,
@@ -70,6 +71,16 @@ const UserCard = ({ userData }) => {
       </CardFooter>
     </Card>
   );
+};
+
+UserCard.propTypes = {
+  userData: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    user: PropTypes.string.isRequired,
+    avatar: PropTypes.string,
+    tweets: PropTypes.number.isRequired,
+    followers: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default UserCard;
