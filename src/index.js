@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ChakraProvider>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <BrowserRouter basename="/react-social-test-task">
+          <BrowserRouter basename="/goit-react-tweets">
             <App />
           </BrowserRouter>
         </PersistGate>

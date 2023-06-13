@@ -2,7 +2,7 @@
   "name": "react-template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://OleksiiFedorenko.github.io/react-social-test-task/",
+  "homepage": "https://OleksiiFedorenko.github.io/goit-react-tweets/",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.19",
     "@chakra-ui/react": "^2.7.0",
